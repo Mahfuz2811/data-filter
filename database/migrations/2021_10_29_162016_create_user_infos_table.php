@@ -17,11 +17,15 @@ class CreateUserInfosTable extends Migration
             $table->id();
             $table->string('email');
             $table->string('name');
-            $table->string('dob')->index();
+            $table->dateTime('dob');
+            $table->integer('yob');
+            $table->integer('mob');
             $table->string('phone');
             $table->string('ip');
             $table->string('country');
             $table->timestamps();
+
+            $table->index(['dob', 'yob', 'mob']);
         });
     }
 

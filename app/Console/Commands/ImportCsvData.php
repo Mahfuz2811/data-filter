@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\UserInfo;
 use Illuminate\Console\Command;
+use Illuminate\Support\Carbon;
 
 class ImportCsvData extends Command
 {
@@ -31,10 +32,13 @@ class ImportCsvData extends Command
 
                 $count++;
 
+                $dob = new Carbon( trim($line[3]) );
                 UserInfo::create([
                    'email' => trim($line[1]),
                    'name' => trim($line[2]),
                    'dob' => trim($line[3]),
+                   'yob' => $dob->format('Y'),
+                   'mob' => $dob->format('m'),
                    'phone' => trim($line[4]),
                    'ip' => trim($line[5]),
                    'country' => trim($line[6]),

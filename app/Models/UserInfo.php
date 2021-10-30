@@ -13,6 +13,8 @@ class UserInfo extends Model
         'email',
         'name',
         'dob',
+        'yob',
+        'mob',
         'phone',
         'ip',
         'country'
