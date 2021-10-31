@@ -8,9 +8,6 @@ This repository contains Laravel `8.x`
     - `git clone git@github.com:Mahfuz2811/data-filter.git`
 - Go to project root
     - `cd data-filter`
-- Copy the docker-compose and env file
-    - `cp docker-compose.yml.example docker-compose.yml`
-    - `cp .env.example .env`
 - By default, the `postgres` database's password is set to `secret` and the database is set to `data_filter` and the user `root`. If you want to
   change the default values, then change them in (docker-compose.yml) `services.postgres.environment.POSTGRES_PASSWORD`
   and `services.postgres.environment.POSTGRES_DB` and `services.postgres.environment.POSTGRES_USER` in `docker-compose.yml` file.
