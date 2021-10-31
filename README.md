@@ -27,6 +27,12 @@ docker-compose run php php artisan import:data
 - Your application will be running in `http://localhost:8080`
 
 
+If you want to analyse the query then run the below query in sql editor.
+
+`EXPLAIN ANALYSE
+select * from user_infos where yob = 1988 and mob = 4;`
+
+
 N.B. If you don't use docker then you have to install all the dependency manually.
 
 1. php:7.4
