@@ -46,7 +46,7 @@ class ImportCsvData extends Command
 
                 $output = [];
                 $output[] = 'Time: ' . date('r');
-                $output[] = 'Importing row count: ' . $count;
+                $output[] = 'Hold your patient. It took few minutes. Importing row count: ' . $count . ' Out of 100000';
                 $this->replaceCommandOutput($output);
                 usleep(100);
             }
