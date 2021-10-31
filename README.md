@@ -13,7 +13,8 @@ This repository contains Laravel `8.x`
   and `services.postgres.environment.POSTGRES_DB` and `services.postgres.environment.POSTGRES_USER` in `docker-compose.yml` file.
 - If you changed your database credentials in `docker-compose.yml` file, then you need to change values in your `.env`
   file's `DB_DATABASE`, `DB_PASSWORD` and `POSTGRES_USER` accordingly.
-- Run the below command
+- If you don't change anything then let them go as it is.
+- Just run the below command
 
 ```bash
 docker-compose run -e COMPOSER_MEMORY_LIMIT=-1 php composer install
