@@ -1,0 +1,38 @@
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 0;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.header th{
+    padding: 10px !important;
+    border-bottom: 4pt solid #EEEFF0;
+    background-color: #1E97C4;
+    color: #ffffff;
+}
+
+tr.border-bottom td {
+    padding: 10px !important;
+    border-bottom: 5pt solid #EEEFF0;
+}
+
+tr.border-bottom-last td {
+    padding: 10px !important;
+}
+
+label{
+    margin-top: 20px;
+}
+
+.border-black {
+    border-color: #000000;
+}
+
+.pd-custom {
+    padding: .375rem 1.6rem !important;
+}
+
