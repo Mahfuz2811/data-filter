@@ -25,3 +25,22 @@ docker-compose run php php artisan import:data
 
 - Run `docker-compose up -d --build` to boot up the containers.
 - Your application will be running in `http://localhost:8080`
+
+
+N.B. If you don't use docker then you have to install all the dependency manually.
+
+1. php:7.4
+2. nginx:1.13.6/apache
+3. postgres:10.4
+4. redis:5.0.5
+5. pdo pdo_pgsql pgsql
+
+And then configure env accordingly. and run the below command
+
+```bash
+composer install
+php artisan key:generate
+php artisan migrate
+php artisan import:data
+php artisan serve --port=8080
+```
