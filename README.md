@@ -3,6 +3,9 @@
 ## Laravel Version
 This repository contains Laravel `8.x`
 
+##Prerequisites - for docker setup
+1. Docker
+
 ## How to use?
 - Clone the repository.
     - `git clone git@github.com:Mahfuz2811/data-filter.git`
