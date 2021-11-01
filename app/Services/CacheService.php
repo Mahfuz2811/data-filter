@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use Illuminate\Contracts\Cache\Repository;
+use Illuminate\Support\Facades\Cache;
 
 class CacheService
 {
@@ -27,6 +28,7 @@ class CacheService
 
     public function setUserInfoData($data, string $year = null, string $month = null, $ttl = null): void
     {
+        $this->forget('user');
         $key = $this->keyResolver(self::$KEY_USER_INFO, $year, $month);
         $this->repository->set($key, $data, $ttl);
     }
@@ -35,5 +37,14 @@ class CacheService
     {
         $key = $this->keyResolver(self::$KEY_USER_INFO, $year, $month);
         return $this->repository->get($key);
+    }
+
+    public function forget($key_name)
+    {
+        $redis = Cache::getRedis();
+        $keys = $redis->keys("*$key_name*");
+        foreach ($keys as $key) {
+            $this->repository->delete(substr($key, 23));
+        }
     }
 }
