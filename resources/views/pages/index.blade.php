@@ -23,12 +23,12 @@
     <div class="col-md-6">
         <div style="display: flex; margin-top: 55px; float: right;">
             <a class="btn border-black {{ $page == 1 ? 'disabled' : '' }}"
-               href="{{ route('index', ['yob' => $yob, 'mob' => $mob, 'page' => $page-1]) }}">
+               href="{{ route('index', ['yob' => $yob, 'mob' => $mob, 'page' => $page-1, 'perPage' => $perPage]) }}">
                 Previous
             </a>
-            <div style="margin: 5px 15px;">{{ (($page-1)*20)+1 }} - {{ ($page*20) > $totalData ? $totalData : ($page*20) }} 0f {{ $totalData }}</div>
-            <a class="btn border-black pd-custom {{ ($page*20) >= $totalData ? 'disabled' : '' }}"
-               href="{{ route('index', ['yob' => $yob, 'mob' => $mob, 'page' => $page+1]) }}">
+            <div style="margin: 5px 15px;">{{ (($page-1)*$perPage)+1 }} - {{ ($page*$perPage) > $totalData ? $totalData : ($page*$perPage) }} 0f {{ $totalData }}</div>
+            <a class="btn border-black pd-custom {{ ($page*$perPage) >= $totalData ? 'disabled' : '' }}"
+               href="{{ route('index', ['yob' => $yob, 'mob' => $mob, 'page' => $page+1, 'perPage' => $perPage]) }}">
                 Next
             </a>
         </div>
@@ -64,12 +64,12 @@
         <div class="col-md-12">
             <div style="display: flex; float: right;">
                 <a class="btn border-black {{ $page == 1 ? 'disabled' : '' }}"
-                   href="{{ route('index', ['yob' => $yob, 'mob' => $mob, 'page' => $page-1]) }}">
+                   href="{{ route('index', ['yob' => $yob, 'mob' => $mob, 'page' => $page-1, 'perPage' => $perPage]) }}">
                     Previous
                 </a>
-                <div style="margin: 5px 15px;">{{ (($page-1)*20)+1 }} - {{ ($page*20) > $totalData ? $totalData : ($page*20) }} 0f {{ $totalData }}</div>
-                <a class="btn border-black pd-custom {{ ($page*20) >= $totalData ? 'disabled' : '' }}"
-                   href="{{ route('index', ['yob' => $yob, 'mob' => $mob, 'page' => $page+1]) }}">
+                <div style="margin: 5px 15px;">{{ (($page-1)*$perPage)+1 }} - {{ ($page*$perPage) > $totalData ? $totalData : ($page*$perPage) }} 0f {{ $totalData }}</div>
+                <a class="btn border-black pd-custom {{ ($page*$perPage) >= $totalData ? 'disabled' : '' }}"
+                   href="{{ route('index', ['yob' => $yob, 'mob' => $mob, 'page' => $page+1, 'perPage' => $perPage]) }}">
                     Next
                 </a>
             </div>

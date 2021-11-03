@@ -28,18 +28,18 @@ class DataShowController extends Controller
         $page = request('page', 1);
         if ($page <= 0)
             $page = 1;
-        $perPage = 20;
+        $perPage = request('perPage', 20);
 
         if (!request()->has('yob') && !request()->has('mob')) {
             $data = [];
             $totalData = 0;
-            return view('pages.index', compact('data', 'page', 'totalData', 'yob', 'mob'));
+            return view('pages.index', compact('data', 'page', 'totalData', 'yob', 'mob'. 'perPage'));
         }
 
         if ($data = $this->cache->getUserInfoData(request('yob', null), request('mob', null))) {
             $totalData = count($data);
             $data = array_slice($data, (($page - 1) * $perPage), $perPage);
-            return view('pages.index', compact('data', 'page', 'totalData', 'yob', 'mob'));
+            return view('pages.index', compact('data', 'page', 'totalData', 'yob', 'mob', 'perPage'));
         }
 
         $query = UserInfo::query();
@@ -56,6 +56,6 @@ class DataShowController extends Controller
         $totalData = count($data);
         $data = array_slice($data, (($page - 1) * $perPage), $perPage);
 
-        return view('pages.index', compact('data', 'page', 'totalData', 'yob', 'mob'));
+        return view('pages.index', compact('data', 'page', 'totalData', 'yob', 'mob', 'perPage'));
     }
 }
